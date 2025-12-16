@@ -1,0 +1,73 @@
+{% extends 'layouts/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {% block content %}
+
+    <section class="login">
+        <div class="login_container">
+            {% if auth%}
+            <div class="login_inner_auth">
+                <h1>You are already logged in</h1> 
+                <a id="back_home" href="{% url 'home' %}">Back to Home</a>
+            </div>
+            {% else %}
+                <div class="login_inner">
+                    {% if redirected %}
+                        <h1>First, registrer please</h1>
+                        <h2>Who will receive the delivery?</h2>
+                    {% else %}
+                    <h1>Log in here</h1>
+                    {% endif %}
+
+                    <div class="login-section">
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li>{{message}}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    
+                        <form class="login-form" method="POST" action="">
+                            {% csrf_token %}
+                            <div class="input-container">
+                                <input type="text" name="username" placeholder="Username">
+                            </div>
+                            <div class="input-container">
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+
+
+                            <div class="submit_container">
+                                <input type="submit" name="Login" id="" value="SUBMIT">
+                            </div>
+                        </form>
+                    </div>
+                
+                    <div class="regist-button">
+                        <p>Not registered?
+                        </p>
+                        <a href="{% url 'registrer' %}">REGISTER</a>
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+    </section>
+    <div class="background">
+        <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
+    </div>
+
+</body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</html>
+{% endblock %}

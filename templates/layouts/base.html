@@ -1,0 +1,41 @@
+{% load static %}
+<head>
+    <title>Korol GO</title>
+</head>
+<header>
+    <nav id="navbar">
+
+        <div class="nav_inner">
+            <div class="logo-home">
+                <li><a href="/">Korol <span class="logo-span">GO</span></a></li>
+            </div>
+
+            <div class="nav-buttons">
+                <ul class="buttons_navbar">
+                    <div class="buttons_navbar_inner">
+                        <li><a href="{% url 'make_order' %}">Order</a></li>
+                        <li><a href="{% url 'orders' %}">View Orders</a></li>
+                    </div>
+                    <div id="hbger_li"><button id="hbger_btn">☰</button></div>
+                </ul>
+
+                <ul class="session_navbar">
+                    {% if request.user.is_authenticated %}
+                    <li><a class="session" href="{% url 'logout' %}">{{request.user}} | <span class="session-state"> LOGOUT</span></a></li>
+                    {% else %}
+                    <li><a class="session" href="{% url 'login' %}"><span class="session-state"> LOGIN</span></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+<script src="{% static 'js/animations.js'%}"></script>
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500;600;700&family=Poppins:wght@300;400;500&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+{% block content %}
+
+{% endblock %}

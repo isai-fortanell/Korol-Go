@@ -1,0 +1,182 @@
+/* START: global styles*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500;600;700&family=Poppins:wght@300;400;500&family=Ubuntu:wght@400;500&display=swap');
+
+
+*{
+    font-family: 'Modulus';
+    scroll-behavior: smooth;
+    outline: none;
+}
+body{
+    background-color: #e8f9fd;
+    padding: 0;
+    margin: 0;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+}
+a, li{
+    text-decoration: none;
+    list-style-type: none;
+}
+/* END: global styles*/
+
+/* START: nav styles */
+nav{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 5;
+}
+.nav_inner{
+    width: 95%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-home {
+    background-color: #fff;
+    height: 20px;
+    padding: 10px 5px;
+}
+.logo-home .logo-span{
+    background-color: #d2001a;
+}
+.logo-home a{
+    color: #000;
+    font-size: 20px;
+}
+.logo-span{
+    font-weight: bolder;
+    background-color: #fff;
+    background-color: #e6b52f;
+    color:  #fff;
+    border-radius: 0 5px 5px 0;
+    padding: 5px 10px;
+    padding-left: 30px;
+}
+.buttons_navbar{
+    height: 35px;
+    border-radius: 5px;
+    padding-right: 0px;
+}
+.buttons_navbar_inner{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    margin-right: -10px;
+    border-radius: 5px 0px 0px 5px;
+    visibility: hidden;
+
+}
+@keyframes hide {
+    0%{
+        visibility: visible;
+        margin-right: -10px;
+        opacity: 100%;
+
+    }
+    
+    100% {
+        visibility: visible;
+        opacity: 0%;
+        margin-right: -100px;
+    }
+  }
+@keyframes show {
+    0%{
+        visibility: visible;
+        opacity: 0%;
+        margin-right: -100px;
+    }
+    100% {
+        visibility: visible;
+        margin-right: -10px;
+        opacity: 100%;
+    }
+  }
+.buttons_navbar_inner.active{
+    animation-name: show;
+    animation-duration: 0.5s; 
+    animation-timing-function: ease-out;
+    visibility: visible;
+}
+.buttons_navbar_inner.inactivating{
+    animation-name: hide;
+    animation-duration: 0.3s; 
+    animation-timing-function: ease-in;
+    visibility: hidden;
+}
+
+.buttons_navbar_inner li{
+    margin: 0 10px;
+    height: auto;
+}
+#hbger_li{
+    margin-left: 10px;
+    background-color: #eee;
+
+}
+#hbger_li.active{
+    float: right;
+    background-color: transparent;
+}
+.buttons_navbar li a{
+    color: #000;
+}
+nav button{
+    background-color: #d2001a;
+    margin: 0;
+    padding: 0;
+}
+.nav-buttons{
+    display: flex;
+}
+#hbger_btn{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    color: #fff;
+    background-color: #d2001a;
+    height: 35px;
+    width: 50px;
+    margin-right: -10px;
+    float: right;
+}
+.session_navbar{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.session_navbar a{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    color: #fff;
+    background-color: #d2001a;
+}
+
+.content_inner a{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    color: #fff;
+    background-color: #d2001a;
+}

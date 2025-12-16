@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks for ordering with us</title>
+</head>
+<body>
+    {% block content %}
+
+    <div class="content shadow">
+        <div class="content_inner">
+            <h1>Thanks for ordering with us!</h1>
+            <p>Your order has been succesfully maked, your order code is: {{order.number}}
+            </p>
+            <a href="{% url 'view-order' order.number %}">View Order</a>
+        </div>
+    </div>
+    <div class="background">
+        <img src="https://images.unsplash.com/photo-1470334165954-365e14d84faa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="">
+    </div>
+
+</body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/template.css'%}">
+</html>
+
+{% endblock %}

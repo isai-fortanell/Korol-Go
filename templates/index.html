@@ -1,0 +1,114 @@
+{% extends 'layouts/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+</head>
+<body>
+<body>
+    {% block content %}
+
+    <main>
+        <div class="top">
+            <div id="hero_container">
+                <div id="hero_inner">
+                    <h1>Order like a Korol</h1>
+                    <h5>No worries,  just order, <span class="logo-span">we GO</span></h5>
+                </div>
+                <div id="hero_order-button">
+                    <button><a href="#order-section">ORDER</a></button>
+                </div>
+            </div>
+
+            <div id="hero_image__container">
+                <img id="hero_image" src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""></img>
+                <!-- <img id="hero_image" src="https://images.unsplash.com/photo-1652862730779-c4f87896c7a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""></img> -->
+            </div>
+        </div>
+        <div class="heading_div">
+            <h1>Hurry? Hungry? Wishy?</h1>
+        </div>
+
+
+        <div class="order" id="order-section">
+            <div class="triangle_container">
+                <div class="triangle"></div>
+            </div>
+            <div class="order_container">
+                <div class="order-text_container">
+                    <h1>What do you want to order today?</h1>
+                </div>
+                <form class ="order_inner" method="POST" action="">
+                    {% csrf_token %}
+                    <div class="order-form">
+                        <svg stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" stroke-width="2" d="M3,18 L1,18 L1,3 L14,3 L14,17 M14,18 L9,18 M6,21 C7.65685425,21 9,19.6568542 9,18 C9,16.3431458 7.65685425,15 6,15 C4.34314575,15 3,16.3431458 3,18 C3,19.6568542 4.34314575,21 6,21 Z M17,21 C18.6568542,21 20,19.6568542 20,18 C20,16.3431458 18.6568542,15 17,15 C15.3431458,15 14,16.3431458 14,18 C14,19.6568542 15.3431458,21 17,21 Z M14,8 L19,8 L23,13 L23,18 L20,18"></path></svg>
+                        {{form}}
+                    </div> 
+                    <div class="order-button">
+                        <input id="submit-order" type="submit" value="MAKE ORDER" >                        
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="get_work" id="working-section">
+            <div class="get_work_padding">
+                <h1>Want to do more?</h1>
+            </div>
+            <div class="work_container">
+                <div class="work_container_inner">
+                    <div class="work_container_header">
+                        <h2><span class="logo-span">GO</span> and Be your own boss</h2>
+                    </div>
+                    <div class="work_container_text">
+                        <p>Be your own boss with the Korol GO app and earn on your own schedule. Join the best all-in-one delivery app, and start a rewarding journey.</p>
+                    </div>
+                    <div class="work-button">
+                        <a href="work">Register for work</a>
+                        <a id="work-login" href="login">already an account? LOGIN</a>
+
+                    </div> 
+                </div>    
+            </div>
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="footer_div" id="footer_korol">
+            <h5>Korol <span class="logo-span">GO</span></h5>
+            <div class="footer_buttons">
+                <button class="footer_button">App Store</button>
+                <button class="footer_button">Google Play</button>
+
+            </div>
+        </div>
+        <div class="footer_div">
+            <div class="footer_links">
+                <div class="footer_links_inner">            
+                    <a href="#" class="footer_link">Help</a>
+                    <a href="#" class="footer_link">Contact</a>
+                    <a href="#" class="footer_link">About Korol</a>
+                    <a href="#" class="footer_link">Bussines</a>
+                </div>
+                <div class="footer_links_inner">            
+                    <a href="#" class="footer_link">Help</a>
+                    <a href="#" class="footer_link">Contact</a>
+                    <a href="#" class="footer_link">About Korol</a>
+                    <a href="#" class="footer_link">Bussines</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</html>
+{% endblock %}

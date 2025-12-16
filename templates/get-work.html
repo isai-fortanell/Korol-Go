@@ -1,0 +1,43 @@
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {% block content %}
+
+    <section class="login">
+        <div class="login_container">
+            <div class="login_inner">
+                {% if is_working == True %}
+                <h1>You already work</h1>
+                {% else %}
+                <h1>Get registered, start delivering</h1>
+                {% endif %}
+
+                <div class="login-section_work">
+  
+                    <form class="work-form" method="POST" action="">
+                        {% csrf_token %}
+                        {% if is_working == True %}
+                        <input class="work" type="submit" value="Back to client account">
+                        {% else %}
+                        <input class="work" type="submit" value="Work for korol">
+                        {% endif %}
+                    </form>
+                </div>
+        </div>
+    </section>
+    <div class="background">
+        <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
+    </div>
+
+</body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</html>
+{% endblock %}

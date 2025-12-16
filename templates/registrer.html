@@ -1,0 +1,52 @@
+{% extends 'layouts/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrer</title>
+</head>
+<body>
+    {% block content %}
+    <section class="login">
+        <div class="login_container">
+            <div class="login_inner">
+                <h1>Register here</h1>
+                <div class="regist-section">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li">{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    
+                    <form class="login-form" id="registrer-form" method="POST" action="">
+                        {% csrf_token %}
+                        {{form.as_p}}
+
+                        <div class="submit_container">
+                            <input type="submit" value="REGISTER">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="login-button">
+                    <p>Already registered?</p>
+                    <a href="{% url 'login' %}">LOG IN</a>
+                </div>
+
+            </div>
+        </div>
+    </section>   
+    <div class="background">
+        <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
+    </div>           
+
+
+</body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</html>
+{% endblock %}
